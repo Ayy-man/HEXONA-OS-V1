@@ -28,16 +28,6 @@
         </div>
     </header>
 
-    <!-- View Tabs -->
-    <section class="view-tabs-section">
-        <div class="view-tabs">
-            <a href="index.html" class="view-tab">Kanban</a>
-            <a href="list-view.html" class="view-tab active">List View</a>
-            <a href="partner-portal.html" class="view-tab">Partner Portal</a>
-            <a href="#analytics" class="view-tab">Analytics</a>
-        </div>
-    </section>
-
     <!-- Filter Bar -->
     <section class="filter-bar">
         <button class="btn btn-primary" onclick="addProposal('new')">
@@ -45,6 +35,42 @@
         </button>
         <div class="filter-group">
             <input type="text" class="search-input" placeholder="Search proposals...">
+            <select class="filter-select">
+                <option value="">All Partners</option>
+                <option value="partner1">DFY Dave</option>
+                <option value="partner2">Agency Alex</option>
+                <option value="partner3">Consultant Chris</option>
+            </select>
+            <select class="filter-select">
+                <option value="">All Types</option>
+                <option value="blueprint">Blueprint</option>
+                <option value="discovery">Discovery</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- View Selector -->
+    <section class="view-selector-bar">
+        <div class="view-toggle-buttons">
+            <button class="view-toggle-btn" onclick="window.location.href='index.html'">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <rect x="1" y="2" width="4" height="12"></rect>
+                    <rect x="6" y="2" width="4" height="12"></rect>
+                    <rect x="11" y="2" width="4" height="12"></rect>
+                </svg>
+                Kanban
+            </button>
+            <button class="view-toggle-btn active" onclick="window.location.href='list-view.html'">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <rect x="2" y="3" width="12" height="2"></rect>
+                    <rect x="2" y="7" width="12" height="2"></rect>
+                    <rect x="2" y="11" width="12" height="2"></rect>
+                </svg>
+                List View
+            </button>
+        </div>
+        <div class="list-view-controls">
             <div class="group-by">
                 <label>Group:</label>
                 <select id="groupBy" onchange="groupProposals(this.value)">

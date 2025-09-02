@@ -27,16 +27,6 @@
         </div>
     </header>
 
-    <!-- View Tabs -->
-    <section class="view-tabs-section">
-        <div class="view-tabs">
-            <a href="index.html" class="view-tab active">Kanban</a>
-            <a href="list-view.html" class="view-tab">List View</a>
-            <a href="partner-portal.html" class="view-tab">Partner Portal</a>
-            <a href="#analytics" class="view-tab">Analytics</a>
-        </div>
-    </section>
-
     <!-- Metrics Bar -->
     <section class="metrics-bar">
         <div class="metric-card">
@@ -80,6 +70,28 @@
                 <option value="discovery">Discovery</option>
                 <option value="custom">Custom</option>
             </select>
+        </div>
+    </section>
+
+    <!-- View Selector -->
+    <section class="view-selector-bar">
+        <div class="view-toggle-buttons">
+            <button class="view-toggle-btn active" onclick="window.location.href='index.html'">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <rect x="1" y="2" width="4" height="12"></rect>
+                    <rect x="6" y="2" width="4" height="12"></rect>
+                    <rect x="11" y="2" width="4" height="12"></rect>
+                </svg>
+                Kanban
+            </button>
+            <button class="view-toggle-btn" onclick="window.location.href='list-view.html'">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <rect x="2" y="3" width="12" height="2"></rect>
+                    <rect x="2" y="7" width="12" height="2"></rect>
+                    <rect x="2" y="11" width="12" height="2"></rect>
+                </svg>
+                List View
+            </button>
         </div>
     </section>
 
