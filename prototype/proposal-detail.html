@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexona OS - Proposal Detail</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-left">
+            <h1 class="logo">Hexona OS</h1>
+            <span class="breadcrumb">/ Proposal Detail</span>
+        </div>
+        <nav class="header-nav">
+            <a href="index.html" class="nav-link">← Back to Dashboard</a>
+        </nav>
+        <div class="header-right">
+            <div class="user-info">
+                <span class="user-name">Hamza</span>
+                <span class="user-role">Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Proposal Detail Container -->
+    <main class="proposal-detail-container">
+        <!-- Proposal Header -->
+        <section class="proposal-header">
+            <div class="proposal-title-section">
+                <h1>TechCorp Automation Proposal</h1>
+                <div class="proposal-meta">
+                    <span class="meta-item">
+                        <strong>Type:</strong> Blueprint
+                    </span>
+                    <span class="meta-item">
+                        <strong>Partner:</strong> DFY Dave
+                    </span>
+                    <span class="meta-item">
+                        <strong>Created:</strong> 2 days ago
+                    </span>
+                    <span class="meta-item">
+                        <strong>Status:</strong> <span class="status-badge review">REVIEW</span>
+                    </span>
+                </div>
+            </div>
+            <div class="proposal-actions">
+                <button class="btn btn-secondary" onclick="saveProposal()">Save Draft</button>
+                <button class="btn btn-primary" onclick="approveProposal()">Approve & Send</button>
+                <button class="btn btn-danger" onclick="requestRevision()">Request Revision</button>
+            </div>
+        </section>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs-container">
+            <button class="tab-button active" onclick="switchTab('triage')">Triage Notes</button>
+            <button class="tab-button" onclick="switchTab('content')">Proposal Content</button>
+            <button class="tab-button" onclick="switchTab('quality')">Quality Check</button>
+            <button class="tab-button" onclick="switchTab('timeline')">Timeline</button>
+            <button class="tab-button" onclick="switchTab('comments')">Comments</button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-content">
+            <!-- Triage Tab -->
+            <div id="triage-tab" class="tab-panel active">
+                <h2>Triage Assessment</h2>
+                <div class="triage-grid">
+                    <div class="triage-section">
+                        <h3>Requirements Analysis</h3>
+                        <div class="triage-field">
+                            <label>Client Problem:</label>
+                            <p>TechCorp needs to automate their order processing workflow which currently takes 4 hours of manual work daily. They process 50-100 orders per day with complex routing rules.</p>
+                        </div>
+                        <div class="triage-field">
+                            <label>Solution Approach:</label>
+                            <p>Implement Blueprint #3 (Order Processing Automation) with custom modifications for their specific routing logic. Integrate with existing Shopify and inventory management system.</p>
+                        </div>
+                        <div class="triage-field">
+                            <label>Technical Feasibility:</label>
+                            <div class="feasibility-score high">HIGH - All APIs available, similar implementation completed for ClientX</div>
+                        </div>
+                    </div>
+
+                    <div class="triage-section">
+                        <h3>Pricing Strategy</h3>
+                        <div class="triage-field">
+                            <label>Pricing Boundaries:</label>
+                            <ul class="pricing-list">
+                                <li>Base Blueprint: $10,000</li>
+                                <li>Custom routing logic: $3,000</li>
+                                <li>API integrations (2): $2,000</li>
+                                <li>Total: $15,000</li>
+                            </ul>
+                        </div>
+                        <div class="triage-field">
+                            <label>Budget Comfort:</label>
+                            <p>Client indicated $12,000-18,000 range. Our price of $15,000 is well positioned.</p>
+                        </div>
+                    </div>
+
+                    <div class="triage-section">
+                        <h3>Strategic Guidance</h3>
+                        <div class="guidance-notes">
+                            <div class="note priority-high">
+                                <strong>Priority:</strong> Emphasize time savings - 4 hours/day = 100 hours/month = $5,000/month in labor costs
+                            </div>
+                            <div class="note">
+                                <strong>Risk:</strong> Client's IT team might resist change. Include training and documentation in proposal.
+                            </div>
+                            <div class="note">
+                                <strong>Opportunity:</strong> They mentioned interest in inventory forecasting - potential Phase 2 project
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="triage-section">
+                        <h3>Template & Resources</h3>
+                        <div class="triage-field">
+                            <label>Selected Template:</label>
+                            <p>Blueprint Order Processing v2.3</p>
+                        </div>
+                        <div class="triage-field">
+                            <label>Reference Materials:</label>
+                            <ul>
+                                <li><a href="#">Similar ClientX proposal (won)</a></li>
+                                <li><a href="#">Shopify API documentation</a></li>
+                                <li><a href="#">ROI calculation spreadsheet</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Tab -->
+            <div id="content-tab" class="tab-panel">
+                <h2>Proposal Content</h2>
+                <div class="proposal-editor">
+                    <div class="editor-toolbar">
+                        <button class="toolbar-btn">Bold</button>
+                        <button class="toolbar-btn">Italic</button>
+                        <button class="toolbar-btn">Bullet List</button>
+                        <button class="toolbar-btn">Insert Table</button>
+                        <button class="toolbar-btn">Add Image</button>
+                    </div>
+                    <div class="proposal-sections">
+                        <section class="proposal-section">
+                            <h3>Executive Summary</h3>
+                            <div class="section-content" contenteditable="true">
+                                <p>TechCorp is currently spending 4 hours daily on manual order processing, resulting in delays, errors, and inability to scale. This proposal outlines a comprehensive automation solution that will reduce processing time by 95%, eliminate errors, and provide real-time visibility into order status.</p>
+                                <p>Our solution leverages proven automation blueprints customized for TechCorp's specific workflow, integrating seamlessly with your existing Shopify store and inventory management system.</p>
+                            </div>
+                        </section>
+
+                        <section class="proposal-section">
+                            <h3>Current Challenges</h3>
+                            <div class="section-content" contenteditable="true">
+                                <ul>
+                                    <li>Manual order entry taking 4+ hours daily</li>
+                                    <li>5-10% error rate in order routing</li>
+                                    <li>No real-time visibility into order status</li>
+                                    <li>Inability to scale beyond 100 orders/day</li>
+                                    <li>Customer service delays due to lack of tracking</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section class="proposal-section">
+                            <h3>Proposed Solution</h3>
+                            <div class="section-content" contenteditable="true">
+                                <h4>Automation Components:</h4>
+                                <ol>
+                                    <li><strong>Order Ingestion:</strong> Automatic capture from Shopify with real-time webhook integration</li>
+                                    <li><strong>Smart Routing:</strong> Rule-based routing engine considering inventory, location, and priority</li>
+                                    <li><strong>Inventory Sync:</strong> Real-time inventory updates across all channels</li>
+                                    <li><strong>Status Tracking:</strong> Customer-facing order tracking portal</li>
+                                    <li><strong>Exception Handling:</strong> Automated alerts for issues requiring human intervention</li>
+                                </ol>
+                            </div>
+                        </section>
+
+                        <section class="proposal-section">
+                            <h3>Investment & Timeline</h3>
+                            <div class="section-content">
+                                <table class="pricing-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Component</th>
+                                            <th>Timeline</th>
+                                            <th>Investment</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Base Automation Blueprint</td>
+                                            <td>Week 1-2</td>
+                                            <td>$10,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Custom Routing Logic</td>
+                                            <td>Week 2-3</td>
+                                            <td>$3,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>API Integrations</td>
+                                            <td>Week 3-4</td>
+                                            <td>$2,000</td>
+                                        </tr>
+                                        <tr class="total-row">
+                                            <td><strong>Total</strong></td>
+                                            <td><strong>4 Weeks</strong></td>
+                                            <td><strong>$15,000</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <section class="proposal-section">
+                            <h3>ROI Analysis</h3>
+                            <div class="section-content" contenteditable="true">
+                                <div class="roi-calculator">
+                                    <h4>Monthly Savings:</h4>
+                                    <ul>
+                                        <li>Labor reduction: 100 hours × $50/hour = $5,000</li>
+                                        <li>Error reduction: $500 in corrections/refunds</li>
+                                        <li>Faster processing: 20% increase in capacity = $8,000 additional revenue potential</li>
+                                        <li><strong>Total monthly benefit: $13,500</strong></li>
+                                    </ul>
+                                    <p class="roi-highlight">Investment payback period: <strong>1.1 months</strong></p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quality Check Tab -->
+            <div id="quality-tab" class="tab-panel">
+                <h2>Quality Assessment</h2>
+                <div class="quality-container">
+                    <div class="quality-score-card">
+                        <h3>Overall Quality Score</h3>
+                        <div class="score-display">
+                            <span class="score-value">4.2</span>
+                            <span class="score-max">/ 5.0</span>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-fill" style="width: 84%"></div>
+                        </div>
+                        <p class="score-status good">Ready for Review</p>
+                    </div>
+
+                    <div class="quality-checklist">
+                        <h3>Quality Checklist</h3>
+                        <div class="checklist-item completed">
+                            <input type="checkbox" checked disabled>
+                            <label>Executive summary clearly states the problem and solution</label>
+                        </div>
+                        <div class="checklist-item completed">
+                            <input type="checkbox" checked disabled>
+                            <label>Current challenges are specific and quantified</label>
+                        </div>
+                        <div class="checklist-item completed">
+                            <input type="checkbox" checked disabled>
+                            <label>Solution components are detailed and clear</label>
+                        </div>
+                        <div class="checklist-item completed">
+                            <input type="checkbox" checked disabled>
+                            <label>Pricing is transparent and justified</label>
+                        </div>
+                        <div class="checklist-item completed">
+                            <input type="checkbox" checked disabled>
+                            <label>Timeline is realistic and includes milestones</label>
+                        </div>
+                        <div class="checklist-item warning">
+                            <input type="checkbox" disabled>
+                            <label>ROI calculation needs more detail on assumptions</label>
+                        </div>
+                        <div class="checklist-item completed">
+                            <input type="checkbox" checked disabled>
+                            <label>Next steps are clear and actionable</label>
+                        </div>
+                    </div>
+
+                    <div class="ai-feedback">
+                        <h3>AI Quality Analysis</h3>
+                        <div class="feedback-section">
+                            <h4>Strengths:</h4>
+                            <ul>
+                                <li>Clear problem statement with quantified pain points</li>
+                                <li>Well-structured solution breakdown</li>
+                                <li>Strong ROI justification with specific numbers</li>
+                                <li>Professional tone and formatting</li>
+                            </ul>
+                        </div>
+                        <div class="feedback-section">
+                            <h4>Areas for Improvement:</h4>
+                            <ul>
+                                <li>Add more details about the training and support process</li>
+                                <li>Include a risk mitigation section</li>
+                                <li>Specify the assumptions behind ROI calculations</li>
+                            </ul>
+                        </div>
+                        <div class="feedback-section">
+                            <h4>Competitive Analysis:</h4>
+                            <p>This proposal is positioned well against typical competitors. The 4-week timeline is aggressive but achievable. Consider mentioning our 98% on-time delivery rate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Tab -->
+            <div id="timeline-tab" class="tab-panel">
+                <h2>Proposal Timeline</h2>
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="timeline-item completed">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Inquiry Received</h4>
+                                <p>Via Tally form from DFY Dave</p>
+                                <span class="timeline-date">Nov 28, 10:30 AM</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Triage Completed</h4>
+                                <p>Hamza reviewed and provided guidance</p>
+                                <span class="timeline-date">Nov 28, 2:15 PM</span>
+                                <div class="timeline-duration">Duration: 3h 45m</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Drafting Started</h4>
+                                <p>Assigned to Abdul</p>
+                                <span class="timeline-date">Nov 28, 2:30 PM</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>First Draft Completed</h4>
+                                <p>Abdul submitted for review</p>
+                                <span class="timeline-date">Nov 29, 11:00 AM</span>
+                                <div class="timeline-duration">Duration: 20h 30m</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item active">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Under Review</h4>
+                                <p>Awaiting Hamza's approval</p>
+                                <span class="timeline-date">Nov 29, 11:00 AM - Present</span>
+                                <div class="timeline-sla warning">SLA: 6 hours remaining</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Send to Partner</h4>
+                                <p>Expected completion</p>
+                                <span class="timeline-date">Target: Nov 29, 5:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-stats">
+                        <h3>Performance Metrics</h3>
+                        <div class="stat-row">
+                            <span>Total Time (so far):</span>
+                            <strong>24h 30m</strong>
+                        </div>
+                        <div class="stat-row">
+                            <span>Target SLA:</span>
+                            <strong>48 hours</strong>
+                        </div>
+                        <div class="stat-row">
+                            <span>SLA Status:</span>
+                            <strong class="status-good">On Track</strong>
+                        </div>
+                        <div class="stat-row">
+                            <span>Revision Cycles:</span>
+                            <strong>0</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments Tab -->
+            <div id="comments-tab" class="tab-panel">
+                <h2>Comments & Collaboration</h2>
+                <div class="comments-container">
+                    <div class="comment-thread">
+                        <div class="comment-item">
+                            <div class="comment-header">
+                                <span class="comment-author">Hamza</span>
+                                <span class="comment-time">2 hours ago</span>
+                            </div>
+                            <div class="comment-body">
+                                <p>Great start on this proposal. The ROI section is particularly strong. A few points to consider:</p>
+                                <ul>
+                                    <li>Can we add a case study reference from the ClientX implementation?</li>
+                                    <li>The timeline seems aggressive - make sure we can deliver in 4 weeks</li>
+                                    <li>Consider mentioning our ongoing support options</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="comment-item">
+                            <div class="comment-header">
+                                <span class="comment-author">Abdul</span>
+                                <span class="comment-time">1 hour ago</span>
+                            </div>
+                            <div class="comment-body">
+                                <p>Thanks for the feedback! I've addressed the points:</p>
+                                <ul>
+                                    <li>Added ClientX case study in the solution section</li>
+                                    <li>Confirmed with dev team - 4 weeks is doable with the blueprint approach</li>
+                                    <li>Added a "Ongoing Support" section at the end</li>
+                                </ul>
+                                <p>Ready for your final review.</p>
+                            </div>
+                        </div>
+
+                        <div class="comment-item">
+                            <div class="comment-header">
+                                <span class="comment-author">DFY Dave</span>
+                                <span class="comment-time">30 minutes ago</span>
+                                <span class="comment-badge">Partner</span>
+                            </div>
+                            <div class="comment-body">
+                                <p>Quick note - the client mentioned they're also evaluating a competitor's solution. Their proposal is at $18k but with a 6-week timeline. Our pricing and timeline give us an advantage here.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comment-form">
+                        <h4>Add Comment</h4>
+                        <textarea class="comment-textarea" placeholder="Type your comment here..."></textarea>
+                        <div class="comment-actions">
+                            <label>
+                                <input type="checkbox"> Notify all participants
+                            </label>
+                            <button class="btn btn-primary" onclick="postComment()">Post Comment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+        <div class="action-bar-left">
+            <button class="btn btn-secondary" onclick="history.back()">← Back</button>
+        </div>
+        <div class="action-bar-center">
+            <span class="status-indicator">Auto-saving...</span>
+        </div>
+        <div class="action-bar-right">
+            <button class="btn btn-secondary" onclick="previewProposal()">Preview</button>
+            <button class="btn btn-primary" onclick="moveToNextStage()">Move to Next Stage →</button>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
