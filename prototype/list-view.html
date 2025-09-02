@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexona OS - List View</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/list-view.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-left">
+            <h1 class="logo">Hexona OS</h1>
+            <span class="version">v1.0</span>
+        </div>
+        <nav class="header-nav">
+            <a href="index.html" class="nav-link">Kanban</a>
+            <a href="list-view.html" class="nav-link active">List View</a>
+            <a href="partner-portal.html" class="nav-link">Partner Portal</a>
+            <a href="#analytics" class="nav-link">Analytics</a>
+        </nav>
+        <div class="header-right">
+            <div class="notifications">
+                <span class="notification-badge">3</span>
+                <svg class="icon-bell" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+            </div>
+            <div class="user-info">
+                <span class="user-name">Hamza</span>
+                <span class="user-role">Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- View Toggle Bar -->
+    <section class="view-toggle-bar">
+        <div class="view-buttons">
+            <button class="view-btn" onclick="window.location.href='index.html'">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <rect x="1" y="2" width="4" height="12"></rect>
+                    <rect x="6" y="2" width="4" height="12"></rect>
+                    <rect x="11" y="2" width="4" height="12"></rect>
+                </svg>
+                Board
+            </button>
+            <button class="view-btn active">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <rect x="2" y="3" width="12" height="2"></rect>
+                    <rect x="2" y="7" width="12" height="2"></rect>
+                    <rect x="2" y="11" width="12" height="2"></rect>
+                </svg>
+                List View
+            </button>
+            <button class="view-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <rect x="2" y="2" width="5" height="5"></rect>
+                    <rect x="9" y="2" width="5" height="5"></rect>
+                    <rect x="2" y="9" width="5" height="5"></rect>
+                    <rect x="9" y="9" width="5" height="5"></rect>
+                </svg>
+                Team
+            </button>
+        </div>
+        <div class="view-controls">
+            <div class="group-by">
+                <label>Group:</label>
+                <select id="groupBy" onchange="groupProposals(this.value)">
+                    <option value="status" selected>Status</option>
+                    <option value="partner">Partner</option>
+                    <option value="type">Type</option>
+                </select>
+            </div>
+            <button class="btn btn-secondary" onclick="toggleSubtasks()">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 4v8M4 8h8"/>
+                </svg>
+                Subtasks
+            </button>
+            <button class="btn btn-secondary" onclick="toggleColumns()">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <rect x="2" y="2" width="3" height="12"></rect>
+                    <rect x="7" y="2" width="3" height="12"></rect>
+                    <rect x="12" y="2" width="3" height="12"></rect>
+                </svg>
+                Columns
+            </button>
+        </div>
+    </section>
+
+    <!-- List View Container -->
+    <main class="list-view-container">
+        <!-- SENT Status Group -->
+        <div class="status-group" data-status="sent">
+            <div class="group-header" onclick="toggleGroup('sent')">
+                <span class="collapse-arrow">▼</span>
+                <span class="status-icon sent">⬤</span>
+                <span class="group-title">PROPOSAL SENT</span>
+                <span class="group-count">32</span>
+                <button class="add-btn" onclick="addProposal('sent')">+ Add Lead</button>
+                <span class="group-total">$41,860</span>
+            </div>
+            <div class="group-content" id="sent-content">
+                <table class="proposal-table">
+                    <thead>
+                        <tr>
+                            <th width="40"></th>
+                            <th>Name</th>
+                            <th width="150">DFY Partner</th>
+                            <th width="120">Value</th>
+                            <th width="100">Assignee</th>
+                            <th width="80">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="proposal-row">
+                            <td class="status-cell">
+                                <span class="status-indicator unknown">?</span>
+                            </td>
+                            <td class="name-cell">
+                                <div class="proposal-name">
+                                    CTM | Ian Paltiel | The Wallpaper Company
+                                    <span class="proposal-icons">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="#999">
+                                            <path d="M7 0L14 7L7 14L0 7Z"/>
+                                        </svg>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="#999">
+                                            <path d="M2 2h10v10H2z"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="partner-cell">
+                                <span class="partner-tag mike">Mike/Ian</span>
+                            </td>
+                            <td class="value-cell">$1,650</td>
+                            <td class="assignee-cell">
+                                <span class="assignee-avatar abdul">AA</span>
+                            </td>
+                            <td class="actions-cell">
+                                <button class="action-btn" onclick="openProposalMenu(event)">•••</button>
+                            </td>
+                        </tr>
+                        <tr class="proposal-row">
+                            <td class="status-cell">
+                                <span class="status-indicator unknown">?</span>
+                            </td>
+                            <td class="name-cell">
+                                <div class="proposal-name">
+                                    CTM | Harsh Desai | Action Auto World
+                                    <span class="proposal-icons">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="#999">
+                                            <path d="M2 2h10v10H2z"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="partner-cell">
+                                <span class="partner-tag harsh">Harsh Desai</span>
+                            </td>
+                            <td class="value-cell">$4,200</td>
+                            <td class="assignee-cell">
+                                <span class="assignee-avatar abdul">AA</span>
+                            </td>
+                            <td class="actions-cell">
+                                <button class="action-btn" onclick="openProposalMenu(event)">•••</button>
+                            </td>
+                        </tr>
+                        <tr class="add-row">
+                            <td colspan="6">
+                                <button class="inline-add-btn" onclick="addProposal('sent')">+ Add Lead</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- VERIFY Status Group -->
+        <div class="status-group" data-status="verify">
+            <div class="group-header" onclick="toggleGroup('verify')">
+                <span class="collapse-arrow">▼</span>
+                <span class="status-icon verify">⬤</span>
+                <span class="group-title">PROPOSAL VERIFY</span>
+                <span class="group-count">3</span>
+                <button class="add-btn" onclick="addProposal('verify')">+ Add Lead</button>
+                <span class="group-total">$4,020</span>
+            </div>
+            <div class="group-content" id="verify-content">
+                <table class="proposal-table">
+                    <thead>
+                        <tr>
+                            <th width="40"></th>
+                            <th>Name</th>
+                            <th width="150">DFY Partner</th>
+                            <th width="120">Value</th>
+                            <th width="100">Assignee</th>
+                            <th width="80">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="proposal-row">
+                            <td class="status-cell">
+                                <span class="status-indicator unknown">?</span>
+                            </td>
+                            <td class="name-cell">
+                                <div class="proposal-name">
+                                    CTM | Rob Whelan | Orion Wellness
+                                    <span class="proposal-icons">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="#999">
+                                            <path d="M2 2h10v10H2z"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="partner-cell">
+                                <span class="partner-tag rob">Rob Whelan</span>
+                            </td>
+                            <td class="value-cell">$850</td>
+                            <td class="assignee-cell">
+                                <span class="assignee-avatar abdul">AA</span>
+                            </td>
+                            <td class="actions-cell">
+                                <button class="action-btn" onclick="openProposalMenu(event)">•••</button>
+                            </td>
+                        </tr>
+                        <tr class="proposal-row">
+                            <td class="status-cell">
+                                <span class="status-indicator unknown">?</span>
+                            </td>
+                            <td class="name-cell">
+                                <div class="proposal-name">
+                                    CTM | Finley Adamson | Paul Fox Estate Agents
+                                    <span class="proposal-icons">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="#999">
+                                            <path d="M7 0L14 7L7 14L0 7Z"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="partner-cell">
+                                <span class="partner-tag harry">Harry-Finley</span>
+                            </td>
+                            <td class="value-cell">$1,200</td>
+                            <td class="assignee-cell">
+                                <span class="assignee-avatar abdul">AA</span>
+                            </td>
+                            <td class="actions-cell">
+                                <button class="action-btn" onclick="openProposalMenu(event)">•••</button>
+                            </td>
+                        </tr>
+                        <tr class="proposal-row">
+                            <td class="status-cell">
+                                <span class="status-indicator unknown">?</span>
+                            </td>
+                            <td class="name-cell">
+                                <div class="proposal-name">
+                                    CTM | Mike Ian | Internet Creation
+                                    <span class="proposal-icons">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="#999">
+                                            <rect x="2" y="2" width="10" height="10" fill="#999"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="partner-cell">
+                                <span class="partner-tag mike">Mike/Ian</span>
+                            </td>
+                            <td class="value-cell">$1,970</td>
+                            <td class="assignee-cell">
+                                <span class="assignee-avatar abdul">AA</span>
+                            </td>
+                            <td class="actions-cell">
+                                <button class="action-btn" onclick="openProposalMenu(event)">•••</button>
+                            </td>
+                        </tr>
+                        <tr class="add-row">
+                            <td colspan="6">
+                                <button class="inline-add-btn" onclick="addProposal('verify')">+ Add Lead</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PENDING Status Group -->
+        <div class="status-group" data-status="pending">
+            <div class="group-header" onclick="toggleGroup('pending')">
+                <span class="collapse-arrow">▼</span>
+                <span class="status-icon pending">⬤</span>
+                <span class="group-title">PENDING</span>
+                <span class="group-count">6</span>
+                <button class="add-btn" onclick="addProposal('pending')">+ Add Lead</button>
+                <span class="group-total">$750</span>
+            </div>
+            <div class="group-content" id="pending-content">
+                <table class="proposal-table">
+                    <thead>
+                        <tr>
+                            <th width="40"></th>
+                            <th>Name</th>
+                            <th width="150">DFY Partner</th>
+                            <th width="120">Value</th>
+                            <th width="100">Assignee</th>
+                            <th width="80">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="proposal-row">
+                            <td class="status-cell">
+                                <span class="status-indicator unknown">?</span>
+                            </td>
+                            <td class="name-cell">
+                                <div class="proposal-name">
+                                    Menlo Park 4.0
+                                    <span class="proposal-icons">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="#999">
+                                            <path d="M2 2h10v10H2z"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="partner-cell">
+                                <span class="partner-tag brandon">Brandon & Dean</span>
+                            </td>
+                            <td class="value-cell">$0</td>
+                            <td class="assignee-cell">
+                                <span class="assignee-avatar abdul">AA</span>
+                            </td>
+                            <td class="actions-cell">
+                                <button class="action-btn" onclick="openProposalMenu(event)">•••</button>
+                            </td>
+                        </tr>
+                        <tr class="proposal-row">
+                            <td class="status-cell">
+                                <span class="status-indicator critical">⬤</span>
+                            </td>
+                            <td class="name-cell">
+                                <div class="proposal-name">
+                                    Menlo Park 3.0
+                                    <span class="proposal-icons">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="#999">
+                                            <path d="M2 2h10v10H2z"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="partner-cell">
+                                <span class="partner-tag brandon">Brandon & Dean</span>
+                            </td>
+                            <td class="value-cell">$750</td>
+                            <td class="assignee-cell">
+                                <span class="assignee-avatar abdul">AA</span>
+                            </td>
+                            <td class="actions-cell">
+                                <button class="action-btn" onclick="openProposalMenu(event)">•••</button>
+                            </td>
+                        </tr>
+                        <tr class="proposal-row">
+                            <td class="status-cell">
+                                <span class="status-indicator unknown">?</span>
+                            </td>
+                            <td class="name-cell">
+                                <div class="proposal-name">
+                                    Floger wrapper
+                                </div>
+                            </td>
+                            <td class="partner-cell">
+                                <span class="partner-tag brandon">Brandon & Dean</span>
+                            </td>
+                            <td class="value-cell">$0</td>
+                            <td class="assignee-cell">
+                                <span class="assignee-avatar abdul">AA</span>
+                            </td>
+                            <td class="actions-cell">
+                                <button class="action-btn" onclick="openProposalMenu(event)">•••</button>
+                            </td>
+                        </tr>
+                        <tr class="proposal-row">
+                            <td class="status-cell">
+                                <span class="status-indicator unknown">?</span>
+                            </td>
+                            <td class="name-cell">
+                                <div class="proposal-name">
+                                    CTM | Rebirth Soccer | Brandon & Dean
+                                    <span class="proposal-icons">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="#999">
+                                            <path d="M2 2h10v10H2z"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="partner-cell">
+                                <span class="partner-tag brandon">Brandon & Dean</span>
+                            </td>
+                            <td class="value-cell">—</td>
+                            <td class="assignee-cell">
+                                <span class="assignee-avatar abdul">AA</span>
+                            </td>
+                            <td class="actions-cell">
+                                <button class="action-btn" onclick="openProposalMenu(event)">•••</button>
+                            </td>
+                        </tr>
+                        <tr class="proposal-row">
+                            <td class="status-cell">
+                                <span class="status-indicator unknown">?</span>
+                            </td>
+                            <td class="name-cell">
+                                <div class="proposal-name">
+                                    CTM | AUTOMATO | HOTTE COUTURE
+                                    <span class="proposal-icons">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="#999">
+                                            <path d="M2 2h10v10H2z"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="partner-cell">
+                                <span class="partner-tag automato">Automato</span>
+                            </td>
+                            <td class="value-cell">—</td>
+                            <td class="assignee-cell">
+                                <span class="assignee-avatar abdul">AA</span>
+                            </td>
+                            <td class="actions-cell">
+                                <button class="action-btn" onclick="openProposalMenu(event)">•••</button>
+                            </td>
+                        </tr>
+                        <tr class="proposal-row">
+                            <td class="status-cell">
+                                <span class="status-indicator unknown">?</span>
+                            </td>
+                            <td class="name-cell">
+                                <div class="proposal-name">
+                                    CTM | Pamela Stewart | Sisu and Grit
+                                    <span class="proposal-icons">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="#999">
+                                            <path d="M2 2h10v10H2z"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="partner-cell">
+                                <span class="partner-tag pamela">Pamela Stewart</span>
+                            </td>
+                            <td class="value-cell">—</td>
+                            <td class="assignee-cell">
+                                <span class="assignee-avatar abdul">AA</span>
+                            </td>
+                            <td class="actions-cell">
+                                <button class="action-btn" onclick="openProposalMenu(event)">•••</button>
+                            </td>
+                        </tr>
+                        <tr class="add-row">
+                            <td colspan="6">
+                                <button class="inline-add-btn" onclick="addProposal('pending')">+ Add Lead</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- WON Status Group -->
+        <div class="status-group collapsed" data-status="won">
+            <div class="group-header" onclick="toggleGroup('won')">
+                <span class="collapse-arrow">▶</span>
+                <span class="status-icon won">⬤</span>
+                <span class="group-title">WON</span>
+                <span class="group-count">4</span>
+                <button class="add-btn" onclick="addProposal('won')">+ Add Lead</button>
+                <span class="group-total">$68,500</span>
+            </div>
+            <div class="group-content" id="won-content" style="display: none;">
+                <table class="proposal-table">
+                    <thead>
+                        <tr>
+                            <th width="40"></th>
+                            <th>Name</th>
+                            <th width="150">DFY Partner</th>
+                            <th width="120">Value</th>
+                            <th width="100">Assignee</th>
+                            <th width="80">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="add-row">
+                            <td colspan="6">
+                                <button class="inline-add-btn" onclick="addProposal('won')">+ Add Lead</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- LOST Status Group -->
+        <div class="status-group collapsed" data-status="lost">
+            <div class="group-header" onclick="toggleGroup('lost')">
+                <span class="collapse-arrow">▶</span>
+                <span class="status-icon lost">⬤</span>
+                <span class="group-title">LOST</span>
+                <span class="group-count">12</span>
+                <button class="add-btn" onclick="addProposal('lost')">+ Add Lead</button>
+                <span class="group-total">$145,200</span>
+            </div>
+            <div class="group-content" id="lost-content" style="display: none;">
+                <table class="proposal-table">
+                    <thead>
+                        <tr>
+                            <th width="40"></th>
+                            <th>Name</th>
+                            <th width="150">DFY Partner</th>
+                            <th width="120">Value</th>
+                            <th width="100">Assignee</th>
+                            <th width="80">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="add-row">
+                            <td colspan="6">
+                                <button class="inline-add-btn" onclick="addProposal('lost')">+ Add Lead</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Proposal Menu Dropdown -->
+    <div id="proposalMenu" class="proposal-menu" style="display: none;">
+        <ul>
+            <li onclick="viewDetails()">View Details</li>
+            <li onclick="editProposal()">Edit</li>
+            <li onclick="changeStatus()">Change Status</li>
+            <li onclick="assignTo()">Assign To</li>
+            <li onclick="duplicateProposal()">Duplicate</li>
+            <li onclick="deleteProposal()" class="danger">Delete</li>
+        </ul>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/app.js"></script>
+    <script src="js/list-view.js"></script>
+</body>
+</html>
