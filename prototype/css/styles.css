@@ -553,47 +553,6 @@ body {
     font-weight: 600;
 }
 
-/* Partner Portal Styles */
-.partner-portal {
-    background: var(--light-color);
-}
-
-/* Partner Navigation */
-.partner-nav {
-    background: white;
-    padding: 0 2rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.partner-tabs {
-    display: flex;
-    gap: 2rem;
-}
-
-.partner-tab {
-    padding: 1rem 0;
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-weight: 500;
-    position: relative;
-    transition: color 0.2s;
-    border-bottom: 2px solid transparent;
-}
-
-.partner-tab:hover {
-    color: var(--text-primary);
-}
-
-.partner-tab.active {
-    color: var(--primary-color);
-    border-bottom-color: var(--primary-color);
-}
-
-.partner-dashboard {
-    padding: 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
 
 .proposals-section {
     margin-bottom: 3rem;
@@ -637,12 +596,6 @@ body {
     gap: 1.5rem;
 }
 
-.partner-proposal-card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-}
 
 .proposal-status-bar {
     padding: 0.75rem 1rem;

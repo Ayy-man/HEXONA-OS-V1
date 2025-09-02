@@ -266,42 +266,15 @@
     opacity: 0.4;
 }
 
-/* Partner Cell */
-.partner-tag {
+/* Client Cell */
+.client-tag {
     display: inline-block;
     padding: 0.25rem 0.75rem;
     border-radius: 4px;
     font-size: 0.75rem;
     font-weight: 600;
-    color: white;
-}
-
-.partner-tag.mike {
-    background: #10b981;
-}
-
-.partner-tag.harsh {
-    background: #3b82f6;
-}
-
-.partner-tag.rob {
-    background: #60a5fa;
-}
-
-.partner-tag.harry {
-    background: #f97316;
-}
-
-.partner-tag.brandon {
-    background: #60a5fa;
-}
-
-.partner-tag.automato {
-    background: #8b5cf6;
-}
-
-.partner-tag.pamela {
-    background: #ec4899;
+    background: #f3f4f6;
+    color: #374151;
 }
 
 /* Value Cell */
