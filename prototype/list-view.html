@@ -12,14 +12,7 @@
     <header class="main-header">
         <div class="header-left">
             <h1 class="logo">Hexona OS</h1>
-            <span class="version">v1.0</span>
         </div>
-        <nav class="header-nav">
-            <a href="index.html" class="nav-link">Kanban</a>
-            <a href="list-view.html" class="nav-link active">List View</a>
-            <a href="partner-portal.html" class="nav-link">Partner Portal</a>
-            <a href="#analytics" class="nav-link">Analytics</a>
-        </nav>
         <div class="header-right">
             <div class="notifications">
                 <span class="notification-badge">3</span>
@@ -35,36 +28,23 @@
         </div>
     </header>
 
-    <!-- View Toggle Bar -->
-    <section class="view-toggle-bar">
-        <div class="view-buttons">
-            <button class="view-btn" onclick="window.location.href='index.html'">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                    <rect x="1" y="2" width="4" height="12"></rect>
-                    <rect x="6" y="2" width="4" height="12"></rect>
-                    <rect x="11" y="2" width="4" height="12"></rect>
-                </svg>
-                Board
-            </button>
-            <button class="view-btn active">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                    <rect x="2" y="3" width="12" height="2"></rect>
-                    <rect x="2" y="7" width="12" height="2"></rect>
-                    <rect x="2" y="11" width="12" height="2"></rect>
-                </svg>
-                List View
-            </button>
-            <button class="view-btn">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                    <rect x="2" y="2" width="5" height="5"></rect>
-                    <rect x="9" y="2" width="5" height="5"></rect>
-                    <rect x="2" y="9" width="5" height="5"></rect>
-                    <rect x="9" y="9" width="5" height="5"></rect>
-                </svg>
-                Team
-            </button>
+    <!-- View Tabs -->
+    <section class="view-tabs-section">
+        <div class="view-tabs">
+            <a href="index.html" class="view-tab">Kanban</a>
+            <a href="list-view.html" class="view-tab active">List View</a>
+            <a href="partner-portal.html" class="view-tab">Partner Portal</a>
+            <a href="#analytics" class="view-tab">Analytics</a>
         </div>
-        <div class="view-controls">
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="filter-bar">
+        <button class="btn btn-primary" onclick="addProposal('new')">
+            + New Proposal
+        </button>
+        <div class="filter-group">
+            <input type="text" class="search-input" placeholder="Search proposals...">
             <div class="group-by">
                 <label>Group:</label>
                 <select id="groupBy" onchange="groupProposals(this.value)">
@@ -73,18 +53,7 @@
                     <option value="type">Type</option>
                 </select>
             </div>
-            <button class="btn btn-secondary" onclick="toggleSubtasks()">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M8 4v8M4 8h8"/>
-                </svg>
-                Subtasks
-            </button>
             <button class="btn btn-secondary" onclick="toggleColumns()">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                    <rect x="2" y="2" width="3" height="12"></rect>
-                    <rect x="7" y="2" width="3" height="12"></rect>
-                    <rect x="12" y="2" width="3" height="12"></rect>
-                </svg>
                 Columns
             </button>
         </div>

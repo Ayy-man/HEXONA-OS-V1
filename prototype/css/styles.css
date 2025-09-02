@@ -181,8 +181,39 @@ body {
     color: var(--danger-color);
 }
 
-/* Actions Bar */
-.actions-bar {
+/* View Tabs Section */
+.view-tabs-section {
+    background: white;
+    padding: 0 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.view-tabs {
+    display: flex;
+    gap: 2rem;
+}
+
+.view-tab {
+    padding: 1rem 0;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    position: relative;
+    transition: color 0.2s;
+    border-bottom: 2px solid transparent;
+}
+
+.view-tab:hover {
+    color: var(--text-primary);
+}
+
+.view-tab.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Filter Bar */
+.filter-bar {
     background: white;
     padding: 1rem 2rem;
     display: flex;

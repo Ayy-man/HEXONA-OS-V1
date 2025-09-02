@@ -11,14 +11,7 @@
     <header class="main-header">
         <div class="header-left">
             <h1 class="logo">Hexona OS</h1>
-            <span class="version">v1.0</span>
         </div>
-        <nav class="header-nav">
-            <a href="index.html" class="nav-link active">Kanban</a>
-            <a href="list-view.html" class="nav-link">List View</a>
-            <a href="partner-portal.html" class="nav-link">Partner Portal</a>
-            <a href="#analytics" class="nav-link">Analytics</a>
-        </nav>
         <div class="header-right">
             <div class="notifications">
                 <span class="notification-badge">3</span>
@@ -33,6 +26,16 @@
             </div>
         </div>
     </header>
+
+    <!-- View Tabs -->
+    <section class="view-tabs-section">
+        <div class="view-tabs">
+            <a href="index.html" class="view-tab active">Kanban</a>
+            <a href="list-view.html" class="view-tab">List View</a>
+            <a href="partner-portal.html" class="view-tab">Partner Portal</a>
+            <a href="#analytics" class="view-tab">Analytics</a>
+        </div>
+    </section>
 
     <!-- Metrics Bar -->
     <section class="metrics-bar">
@@ -58,8 +61,8 @@
         </div>
     </section>
 
-    <!-- Quick Actions Bar -->
-    <section class="actions-bar">
+    <!-- Filter Bar -->
+    <section class="filter-bar">
         <button class="btn btn-primary" onclick="openNewProposal()">
             + New Proposal
         </button>
