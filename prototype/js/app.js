@@ -23,13 +23,19 @@ function togglePartnerDropdown(event, proposalId) {
     selectedDiv.classList.toggle('active');
 }
 
-function selectPartner(event, proposalId, partnerName) {
+function selectPartner(event, proposalId, partnerName, cohort) {
     event.stopPropagation();
     
     // Update the selected partner display
     const selectedDiv = document.querySelector(`#partner-menu-${proposalId}`).previousElementSibling;
     selectedDiv.querySelector('span:first-child').textContent = partnerName;
     selectedDiv.setAttribute('data-partner', partnerName);
+    
+    // Update cohort class on selected div
+    selectedDiv.classList.remove('cohort-1', 'cohort-2', 'cohort-3');
+    if (cohort) {
+        selectedDiv.classList.add(`cohort-${cohort}`);
+    }
     
     // Update selected state in menu
     const menu = document.getElementById(`partner-menu-${proposalId}`);

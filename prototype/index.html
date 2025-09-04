@@ -60,13 +60,26 @@
             <input type="text" class="search-input" placeholder="Search proposals...">
             <select class="filter-select">
                 <option value="">All Partners</option>
-                <option value="rachit">Rachit Saini</option>
-                <option value="rob">Rob Whelan</option>
-                <option value="jack">Jack Taitague</option>
-                <option value="brandon">Brandon & Dean</option>
-                <option value="automato">Automato</option>
-                <option value="christina">Christina Samaan</option>
-                <option value="harry">Harry-Finley</option>
+                <optgroup label="Cohort 3">
+                    <option value="vonne">Vonne - USA</option>
+                    <option value="brandon-g">Brandon Givens - USA</option>
+                    <option value="pamela">Pamela Stewart - ON</option>
+                    <option value="nate">Nate Guirretez - Germany</option>
+                </optgroup>
+                <optgroup label="Cohort 2">
+                    <option value="mohammad">Mohammad Nabil - GCC</option>
+                    <option value="mateo">Mateo Caldas - LA</option>
+                    <option value="dan">Dan Lucassen - Netherlands</option>
+                    <option value="cutter">Cutter Werdel - US</option>
+                    <option value="kevin">Kevin Simon - TX</option>
+                </optgroup>
+                <optgroup label="Cohort 1">
+                    <option value="rachit">Rachit Saini - Vancouver</option>
+                    <option value="rob">Rob Whelan - Ireland</option>
+                    <option value="jack">Jack Taitague - Guam</option>
+                    <option value="brandon">Brandon & Dean - UK</option>
+                    <option value="christina">Christina Samaan - Detroit</option>
+                </optgroup>
             </select>
             <select class="filter-select">
                 <option value="">All Types</option>
@@ -122,20 +135,42 @@
                         <h4 class="card-title">TechCorp Automation</h4>
                         <div class="card-partner">
                             <div class="partner-dropdown">
-                                <div class="partner-selected" onclick="togglePartnerDropdown(event, 'prop-1')" data-partner="Brandon & Dean">
-                                    <span>Brandon & Dean</span>
+                                <div class="partner-selected cohort-1" onclick="togglePartnerDropdown(event, 'prop-1')" data-partner="Brandon & Dean - UK">
+                                    <span>Brandon & Dean - UK</span>
                                     <span class="dropdown-arrow">▼</span>
                                 </div>
                                 <div class="partner-dropdown-menu" id="partner-menu-prop-1">
-                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Rachit Saini')">Rachit Saini</div>
-                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Rob Whelan')">Rob Whelan</div>
-                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Jack Taitague')">Jack Taitague</div>
-                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Challon Nazaire')">Challon Nazaire</div>
-                                    <div class="partner-option selected" onclick="selectPartner(event, 'prop-1', 'Brandon & Dean')">Brandon & Dean</div>
-                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Automato')">Automato</div>
-                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Christina Samaan')">Christina Samaan</div>
-                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Harry-Finley')">Harry-Finley</div>
-                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Various Partners')">Various Partners</div>
+                                    <!-- Cohort 3 (Green) -->
+                                    <div class="partner-option cohort-3" onclick="selectPartner(event, 'prop-1', 'Vonne - USA', 3)">Vonne - USA</div>
+                                    <div class="partner-option cohort-3" onclick="selectPartner(event, 'prop-1', 'Brandon Givens - USA', 3)">Brandon Givens - USA</div>
+                                    <div class="partner-option cohort-3" onclick="selectPartner(event, 'prop-1', 'Pamela Stewart - ON', 3)">Pamela Stewart - ON</div>
+                                    <div class="partner-option cohort-3" onclick="selectPartner(event, 'prop-1', 'Nate Guirretez - Germany', 3)">Nate Guirretez - Germany</div>
+                                    <!-- Cohort 2 (Blue) -->
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Mohammad Nabil - GCC', 2)">Mohammad Nabil - GCC</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Mateo Caldas - LA', 2)">Mateo Caldas - LA</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Dan Lucassen - Netherlands', 2)">Dan Lucassen - Netherlands</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Cutter Werdel - US', 2)">Cutter Werdel - US</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Kevin Simon - TX', 2)">Kevin Simon - TX</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Lawrence Guerrero - USA', 2)">Lawrence Guerrero - USA</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Dino Caruso - Ontario', 2)">Dino Caruso - Ontario</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Michael H - SA', 2)">Michael H - SA</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Anith Chacko - SA', 2)">Anith Chacko - SA</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Keith Booker - TX', 2)">Keith Booker - TX</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Blake Roberts - FL', 2)">Blake Roberts - FL</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Slade Gainey - SC', 2)">Slade Gainey - SC</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Willie Koen - SA', 2)">Willie Koen - SA</div>
+                                    <div class="partner-option cohort-2" onclick="selectPartner(event, 'prop-1', 'Jake Hidalgo', 2)">Jake Hidalgo</div>
+                                    <!-- Cohort 1 (Orange) -->
+                                    <div class="partner-option cohort-1" onclick="selectPartner(event, 'prop-1', 'Rachit Saini - Vancouver', 1)">Rachit Saini - Vancouver</div>
+                                    <div class="partner-option cohort-1" onclick="selectPartner(event, 'prop-1', 'Rob Whelan - Ireland', 1)">Rob Whelan - Ireland</div>
+                                    <div class="partner-option cohort-1" onclick="selectPartner(event, 'prop-1', 'Jack Taitague - Guam', 1)">Jack Taitague - Guam</div>
+                                    <div class="partner-option cohort-1" onclick="selectPartner(event, 'prop-1', 'Challon Nazaire - UK', 1)">Challon Nazaire - UK</div>
+                                    <div class="partner-option cohort-1 selected" onclick="selectPartner(event, 'prop-1', 'Brandon & Dean - UK', 1)">Brandon & Dean - UK</div>
+                                    <div class="partner-option cohort-1" onclick="selectPartner(event, 'prop-1', 'Amin & Yasmine - MTL/DXB', 1)">Amin & Yasmine - MTL/DXB</div>
+                                    <div class="partner-option cohort-1" onclick="selectPartner(event, 'prop-1', 'Christina Samaan - Detroit', 1)">Christina Samaan - Detroit</div>
+                                    <div class="partner-option cohort-1" onclick="selectPartner(event, 'prop-1', 'Shaun Cook - Tennessee', 1)">Shaun Cook - Tennessee</div>
+                                    <div class="partner-option cohort-1" onclick="selectPartner(event, 'prop-1', 'Balal Nadeem - Dubai', 1)">Balal Nadeem - Dubai</div>
+                                    <div class="partner-option cohort-1" onclick="selectPartner(event, 'prop-1', 'Nick Metz - Denver', 1)">Nick Metz - Denver</div>
                                 </div>
                             </div>
                         </div>

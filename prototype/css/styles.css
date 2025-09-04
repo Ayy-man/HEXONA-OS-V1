@@ -581,6 +581,37 @@ body {
     margin-left: auto;
 }
 
+/* Cohort color coding */
+.partner-option.cohort-1 {
+    border-left: 3px solid #f97316;
+}
+
+.partner-option.cohort-2 {
+    border-left: 3px solid #3b82f6;
+}
+
+.partner-option.cohort-3 {
+    border-left: 3px solid #10b981;
+}
+
+.partner-selected.cohort-1 {
+    background: #fff7ed;
+    border-color: #fed7aa;
+    color: #c2410c;
+}
+
+.partner-selected.cohort-2 {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #1e40af;
+}
+
+.partner-selected.cohort-3 {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #15803d;
+}
+
 .card-meta {
     margin-bottom: 0.75rem;
 }
