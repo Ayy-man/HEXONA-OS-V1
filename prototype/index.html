@@ -117,6 +117,9 @@
                         </div>
                         <h4 class="card-title">TechCorp Automation</h4>
                         <p class="card-client">Client: TechCorp Industries</p>
+                        <div class="card-meta">
+                            <span class="card-status triaging">Ayman triaging</span>
+                        </div>
                         <div class="card-footer">
                             <span class="card-value">$15,000</span>
                             <button class="card-action" onclick="openProposalDetail('prop-1')">View</button>
@@ -129,9 +132,27 @@
                         </div>
                         <h4 class="card-title">RetailPlus Integration</h4>
                         <p class="card-client">Client: RetailPlus Corp</p>
+                        <div class="card-meta">
+                            <span class="card-status triaging">Ayman triaging</span>
+                        </div>
                         <div class="card-footer">
                             <span class="card-value">$8,500</span>
                             <button class="card-action" onclick="openProposalDetail('prop-2')">View</button>
+                        </div>
+                    </div>
+                    <div class="proposal-card" draggable="true" ondragstart="drag(event)" id="prop-12">
+                        <div class="card-header">
+                            <span class="card-type custom">Custom</span>
+                            <span class="card-sla red">Overdue</span>
+                        </div>
+                        <h4 class="card-title">DataFlow Analytics</h4>
+                        <p class="card-client">Client: DataFlow Inc</p>
+                        <div class="card-meta">
+                            <span class="card-status triaged">Ayman triaged</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-value">$19,500</span>
+                            <button class="card-action" onclick="openProposalDetail('prop-12')">View</button>
                         </div>
                     </div>
                 </div>
@@ -152,7 +173,7 @@
                         <h4 class="card-title">FinanceFlow System</h4>
                         <p class="card-client">Client: FinanceFlow Inc</p>
                         <div class="card-meta">
-                            <span class="assignee">Hamza reviewing...</span>
+                            <span class="card-status triaged">Ayman triaged</span>
                         </div>
                         <div class="card-footer">
                             <span class="card-value">$25,000</span>
@@ -177,10 +198,7 @@
                         <h4 class="card-title">EcomPro Automation</h4>
                         <p class="card-client">Client: EcomPro Solutions</p>
                         <div class="card-meta">
-                            <span class="assignee">Abdul creating...</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 60%"></div>
-                            </div>
+                            <span class="card-status creating">Abdul Rahim creating</span>
                         </div>
                         <div class="card-footer">
                             <span class="card-value">$12,000</span>
@@ -195,10 +213,7 @@
                         <h4 class="card-title">LogisticsPro Analysis</h4>
                         <p class="card-client">Client: LogisticsPro Ltd</p>
                         <div class="card-meta">
-                            <span class="assignee">Abdul creating...</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 85%"></div>
-                            </div>
+                            <span class="card-status created">Abdul Rahim created</span>
                         </div>
                         <div class="card-footer">
                             <span class="card-value">$18,000</span>
@@ -223,12 +238,28 @@
                         <h4 class="card-title">HealthTech Platform</h4>
                         <p class="card-client">Client: HealthTech Systems</p>
                         <div class="card-meta">
+                            <span class="card-status reviewed">Ayman reviewed</span>
                             <span class="quality-score">Quality: 4.2/5</span>
-                            <span class="assignee">Hamza reviewing...</span>
                         </div>
                         <div class="card-footer">
                             <span class="card-value">$32,000</span>
                             <button class="card-action" onclick="openProposalDetail('prop-6')">View</button>
+                        </div>
+                    </div>
+                    <div class="proposal-card" draggable="true" ondragstart="drag(event)" id="prop-13">
+                        <div class="card-header">
+                            <span class="card-type blueprint">Blueprint</span>
+                            <span class="card-sla yellow">4h left</span>
+                        </div>
+                        <h4 class="card-title">CloudSync Integration</h4>
+                        <p class="card-client">Client: CloudSync Corp</p>
+                        <div class="card-meta">
+                            <span class="card-status escalated">Escalated to Hamza</span>
+                            <span class="quality-score">Quality: 3.8/5</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-value">$27,000</span>
+                            <button class="card-action" onclick="openProposalDetail('prop-13')">View</button>
                         </div>
                     </div>
                 </div>
