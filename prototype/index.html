@@ -97,9 +97,14 @@
 
     <!-- Main Pipeline View -->
     <main class="pipeline-container">
+        <!-- Court Labels -->
+        <div class="court-labels">
+            <span class="court-label internal">OUR COURT</span>
+            <span class="court-label external">THEIR COURT</span>
+        </div>
         <div class="pipeline-wrapper">
             <!-- PENDING Column -->
-            <div class="pipeline-column" data-status="pending">
+            <div class="pipeline-column internal-stage" data-status="pending">
                 <div class="column-header">
                     <h3>PENDING</h3>
                     <span class="column-count">2</span>
@@ -133,7 +138,7 @@
             </div>
 
             <!-- TRIAGE Column -->
-            <div class="pipeline-column" data-status="triage">
+            <div class="pipeline-column internal-stage" data-status="triage">
                 <div class="column-header">
                     <h3>TRIAGE</h3>
                     <span class="column-count">1</span>
@@ -158,7 +163,7 @@
             </div>
 
             <!-- DRAFTING Column -->
-            <div class="pipeline-column" data-status="drafting">
+            <div class="pipeline-column internal-stage" data-status="drafting">
                 <div class="column-header">
                     <h3>DRAFTING</h3>
                     <span class="column-count">2</span>
@@ -204,7 +209,7 @@
             </div>
 
             <!-- REVIEW Column -->
-            <div class="pipeline-column" data-status="review">
+            <div class="pipeline-column internal-stage" data-status="review">
                 <div class="column-header">
                     <h3>REVIEW</h3>
                     <span class="column-count">1</span>
@@ -229,8 +234,11 @@
                 </div>
             </div>
 
+            <!-- Vertical Separator -->
+            <div class="stage-separator"></div>
+
             <!-- SENT Column -->
-            <div class="pipeline-column" data-status="sent">
+            <div class="pipeline-column external-stage" data-status="sent">
                 <div class="column-header">
                     <h3>SENT</h3>
                     <span class="column-count">3</span>
@@ -270,7 +278,7 @@
             </div>
 
             <!-- NEGOTIATION Column -->
-            <div class="pipeline-column" data-status="negotiation">
+            <div class="pipeline-column external-stage" data-status="negotiation">
                 <div class="column-header">
                     <h3>NEGOTIATION</h3>
                     <span class="column-count">1</span>
@@ -295,7 +303,7 @@
             </div>
 
             <!-- WON/LOST Column -->
-            <div class="pipeline-column" data-status="closed">
+            <div class="pipeline-column external-stage" data-status="closed">
                 <div class="column-header">
                     <h3>CLOSED</h3>
                     <span class="column-count">2</span>
