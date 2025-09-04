@@ -59,10 +59,14 @@
         <div class="filter-group">
             <input type="text" class="search-input" placeholder="Search proposals...">
             <select class="filter-select">
-                <option value="">All Assignees</option>
-                <option value="hamza">Hamza</option>
-                <option value="abdul">Abdul</option>
-                <option value="unassigned">Unassigned</option>
+                <option value="">All Partners</option>
+                <option value="rachit">Rachit Saini</option>
+                <option value="rob">Rob Whelan</option>
+                <option value="jack">Jack Taitague</option>
+                <option value="brandon">Brandon & Dean</option>
+                <option value="automato">Automato</option>
+                <option value="christina">Christina Samaan</option>
+                <option value="harry">Harry-Finley</option>
             </select>
             <select class="filter-select">
                 <option value="">All Types</option>
@@ -116,7 +120,25 @@
                             <span class="card-sla green">2h left</span>
                         </div>
                         <h4 class="card-title">TechCorp Automation</h4>
-                        <p class="card-client">Client: TechCorp Industries</p>
+                        <div class="card-partner">
+                            <div class="partner-dropdown">
+                                <div class="partner-selected" onclick="togglePartnerDropdown(event, 'prop-1')" data-partner="Brandon & Dean">
+                                    <span>Brandon & Dean</span>
+                                    <span class="dropdown-arrow">▼</span>
+                                </div>
+                                <div class="partner-dropdown-menu" id="partner-menu-prop-1">
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Rachit Saini')">Rachit Saini</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Rob Whelan')">Rob Whelan</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Jack Taitague')">Jack Taitague</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Challon Nazaire')">Challon Nazaire</div>
+                                    <div class="partner-option selected" onclick="selectPartner(event, 'prop-1', 'Brandon & Dean')">Brandon & Dean</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Automato')">Automato</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Christina Samaan')">Christina Samaan</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Harry-Finley')">Harry-Finley</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-1', 'Various Partners')">Various Partners</div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card-meta">
                             <span class="card-status triaging">Ayman triaging</span>
                         </div>
@@ -131,7 +153,25 @@
                             <span class="card-sla yellow">45m left</span>
                         </div>
                         <h4 class="card-title">RetailPlus Integration</h4>
-                        <p class="card-client">Client: RetailPlus Corp</p>
+                        <div class="card-partner">
+                            <div class="partner-dropdown">
+                                <div class="partner-selected" onclick="togglePartnerDropdown(event, 'prop-2')" data-partner="Automato">
+                                    <span>Automato</span>
+                                    <span class="dropdown-arrow">▼</span>
+                                </div>
+                                <div class="partner-dropdown-menu" id="partner-menu-prop-2">
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-2', 'Rachit Saini')">Rachit Saini</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-2', 'Rob Whelan')">Rob Whelan</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-2', 'Jack Taitague')">Jack Taitague</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-2', 'Challon Nazaire')">Challon Nazaire</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-2', 'Brandon & Dean')">Brandon & Dean</div>
+                                    <div class="partner-option selected" onclick="selectPartner(event, 'prop-2', 'Automato')">Automato</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-2', 'Christina Samaan')">Christina Samaan</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-2', 'Harry-Finley')">Harry-Finley</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-2', 'Various Partners')">Various Partners</div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card-meta">
                             <span class="card-status triaging">Ayman triaging</span>
                         </div>
@@ -146,7 +186,25 @@
                             <span class="card-sla red">Overdue</span>
                         </div>
                         <h4 class="card-title">DataFlow Analytics</h4>
-                        <p class="card-client">Client: DataFlow Inc</p>
+                        <div class="card-partner">
+                            <div class="partner-dropdown">
+                                <div class="partner-selected" onclick="togglePartnerDropdown(event, 'prop-12')" data-partner="Rob Whelan">
+                                    <span>Rob Whelan</span>
+                                    <span class="dropdown-arrow">▼</span>
+                                </div>
+                                <div class="partner-dropdown-menu" id="partner-menu-prop-12">
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-12', 'Rachit Saini')">Rachit Saini</div>
+                                    <div class="partner-option selected" onclick="selectPartner(event, 'prop-12', 'Rob Whelan')">Rob Whelan</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-12', 'Jack Taitague')">Jack Taitague</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-12', 'Challon Nazaire')">Challon Nazaire</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-12', 'Brandon & Dean')">Brandon & Dean</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-12', 'Automato')">Automato</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-12', 'Christina Samaan')">Christina Samaan</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-12', 'Harry-Finley')">Harry-Finley</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-12', 'Various Partners')">Various Partners</div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card-meta">
                             <span class="card-status triaged">Ayman triaged</span>
                         </div>
@@ -171,7 +229,25 @@
                             <span class="card-sla green">6h left</span>
                         </div>
                         <h4 class="card-title">FinanceFlow System</h4>
-                        <p class="card-client">Client: FinanceFlow Inc</p>
+                        <div class="card-partner">
+                            <div class="partner-dropdown">
+                                <div class="partner-selected" onclick="togglePartnerDropdown(event, 'prop-3')" data-partner="Harry-Finley">
+                                    <span>Harry-Finley</span>
+                                    <span class="dropdown-arrow">▼</span>
+                                </div>
+                                <div class="partner-dropdown-menu" id="partner-menu-prop-3">
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-3', 'Rachit Saini')">Rachit Saini</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-3', 'Rob Whelan')">Rob Whelan</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-3', 'Jack Taitague')">Jack Taitague</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-3', 'Challon Nazaire')">Challon Nazaire</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-3', 'Brandon & Dean')">Brandon & Dean</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-3', 'Automato')">Automato</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-3', 'Christina Samaan')">Christina Samaan</div>
+                                    <div class="partner-option selected" onclick="selectPartner(event, 'prop-3', 'Harry-Finley')">Harry-Finley</div>
+                                    <div class="partner-option" onclick="selectPartner(event, 'prop-3', 'Various Partners')">Various Partners</div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card-meta">
                             <span class="card-status triaged">Ayman triaged</span>
                         </div>

@@ -1,5 +1,65 @@
 // Hexona OS - Main Application JavaScript
 
+// Partner Dropdown functionality
+function togglePartnerDropdown(event, proposalId) {
+    event.stopPropagation();
+    const dropdownMenu = document.getElementById(`partner-menu-${proposalId}`);
+    const selectedDiv = event.currentTarget;
+    
+    // Close all other dropdowns
+    document.querySelectorAll('.partner-dropdown-menu').forEach(menu => {
+        if (menu !== dropdownMenu) {
+            menu.classList.remove('show');
+        }
+    });
+    document.querySelectorAll('.partner-selected').forEach(selected => {
+        if (selected !== selectedDiv) {
+            selected.classList.remove('active');
+        }
+    });
+    
+    // Toggle current dropdown
+    dropdownMenu.classList.toggle('show');
+    selectedDiv.classList.toggle('active');
+}
+
+function selectPartner(event, proposalId, partnerName) {
+    event.stopPropagation();
+    
+    // Update the selected partner display
+    const selectedDiv = document.querySelector(`#partner-menu-${proposalId}`).previousElementSibling;
+    selectedDiv.querySelector('span:first-child').textContent = partnerName;
+    selectedDiv.setAttribute('data-partner', partnerName);
+    
+    // Update selected state in menu
+    const menu = document.getElementById(`partner-menu-${proposalId}`);
+    menu.querySelectorAll('.partner-option').forEach(option => {
+        option.classList.remove('selected');
+        if (option.textContent === partnerName) {
+            option.classList.add('selected');
+        }
+    });
+    
+    // Close dropdown
+    menu.classList.remove('show');
+    selectedDiv.classList.remove('active');
+    
+    // Show notification
+    showToast(`Partner updated to ${partnerName}`, 'success');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.partner-dropdown')) {
+        document.querySelectorAll('.partner-dropdown-menu').forEach(menu => {
+            menu.classList.remove('show');
+        });
+        document.querySelectorAll('.partner-selected').forEach(selected => {
+            selected.classList.remove('active');
+        });
+    }
+});
+
 // Drag and Drop functionality for pipeline cards
 function allowDrop(ev) {
     ev.preventDefault();
