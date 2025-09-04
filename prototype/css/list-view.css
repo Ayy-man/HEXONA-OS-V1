@@ -140,6 +140,10 @@
     color: #6b7280;
 }
 
+.status-icon.negotiations {
+    color: #8b5cf6;
+}
+
 .group-title {
     font-size: 0.875rem;
     font-weight: 600;
